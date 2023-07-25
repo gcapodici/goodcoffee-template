@@ -1,1 +1,1 @@
-# goodcoffee-template
+# Goodcoffee template
