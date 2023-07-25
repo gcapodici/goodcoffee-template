@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import '../../../Values/ResponsiveApp.dart';
@@ -8,12 +7,12 @@ import 'HeaderButton.dart';
 class Header extends StatefulWidget implements PreferredSizeWidget {
   final double opacity;
 
-  Header(this.opacity);
+  const Header(this.opacity);
 
   @override
   _HeaderState createState() => _HeaderState();
 
-  Size get preferredSize => Size.fromHeight(kToolbarHeight);
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }
 
 class _HeaderState extends State<Header> {
@@ -30,7 +29,7 @@ class _HeaderState extends State<Header> {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text(
+            Text( // *Este Text es el titulo GOOD COFFEE
               shopStr,
               style: TextStyle(
                 color: Colors.blueGrey[100],
@@ -45,16 +44,16 @@ class _HeaderState extends State<Header> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   SizedBox(width:responsiveApp.barSpace1Width),
-                  HeaderButton(0,aboutUsStr),
+                  HeaderButton(0, aboutUsStr),
                   SizedBox(width: responsiveApp.barSpace1Width),
-                  HeaderButton(1,locationStr),
+                  HeaderButton(1, locationStr),
                 ],
               ),
             ),
-
-            HeaderButton(2,loginStr,lineIsVisible: false,),
+            // *Sección de iniciar sesión
+            HeaderButton(2, loginStr, lineIsVisible: false),
             IconButton(padding: EdgeInsets.zero,
-              icon: Icon(Icons.local_grocery_store_outlined),
+              icon: const Icon(Icons.local_grocery_store_outlined),
               splashColor: Colors.transparent,
               highlightColor: Colors.transparent,
               onPressed: () {

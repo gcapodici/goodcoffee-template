@@ -35,7 +35,6 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     autoScrollController = AutoScrollController(
-      //add this for advanced viewport boundary. e.g. SafeArea
         viewportBoundaryGetter: () =>
             Rect.fromLTRB(0, 0, 0, MediaQuery.of(context).padding.bottom),
         axis: Axis.vertical);
@@ -62,20 +61,20 @@ class _HomePageState extends State<HomePage> {
           child: FloatingActionButton(
             onPressed: () => {
               autoScrollController.scrollToIndex(0)},
-            child:  Icon(Icons.arrow_upward),
+            child:  const Icon(Icons.arrow_upward),
           ),
         ),
         appBar:
        isMobileAndTablet(context)
             ? ShopAppBar(_opacity)
             : Header(_opacity),
-        drawer: ShopDrawer(),
+        drawer: const ShopDrawer(),
         body: ListView(controller: autoScrollController, children: [
           Carousel(),
          isMobileAndTablet(context)
               ? MenuTap()
               : SectionListView(autoScrollController),
-          isMobileAndTablet(context) ? SizedBox.shrink() : Footer()
+          isMobileAndTablet(context) ? const SizedBox.shrink() : Footer()
         ]));
   }
 }
