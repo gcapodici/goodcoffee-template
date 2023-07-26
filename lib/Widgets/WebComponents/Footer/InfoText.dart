@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
+import '../../../Values/ResponsiveApp.dart';
+
 class InfoText extends StatelessWidget {
+  late ResponsiveApp responsiveApp;
   final String type;
   final String text;
 
@@ -11,15 +14,19 @@ class InfoText extends StatelessWidget {
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Text(
-          '$type: ',
-          style: Theme.of(context).accentTextTheme.bodyText2,
-        ),
+        Text('$type: ',
+            style: TextStyle(
+                color: Colors.blueGrey[300],
+                fontSize: responsiveApp
+                    .bodyText1) //Theme.of(context).accentTextTheme.bodyText2,
+            ),
         Flexible(
-          child: Text(
-            text,
-            style: Theme.of(context).accentTextTheme.bodyText1,
-          ),
+          child: Text(text,
+              style: TextStyle(
+                  color: Colors.blueGrey[100],
+                  fontSize: responsiveApp
+                      .bodyText1) //Theme.of(context).accentTextTheme.bodyText1,
+              ),
         )
       ],
     );

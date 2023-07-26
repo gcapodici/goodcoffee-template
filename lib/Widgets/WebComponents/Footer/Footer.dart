@@ -6,13 +6,14 @@ import 'BottomColum.dart';
 import 'InfoText.dart';
 
 class Footer extends StatelessWidget {
-  late ResponsiveApp responsiveApp;
+  //late ResponsiveApp responsiveApp;
 
   Footer({super.key});
 
   @override
   Widget build(BuildContext context) {
-    responsiveApp = ResponsiveApp(context);
+    ResponsiveApp responsiveApp = ResponsiveApp(context);
+
     return Container(
       padding: responsiveApp.edgeInsetsApp.allMediumEdgeInsets,
       color: Theme.of(context).primaryColor,
@@ -41,14 +42,15 @@ class Footer extends StatelessWidget {
                 s3: instagramStr,
               ),
               Container(
-                color: Theme.of(context).accentColor,
+                color: Colors.blueGrey, //Theme.of(context).accentColor,
                 width: responsiveApp.dividerVtlWidth,
                 height: responsiveApp.dividerVtlHeight,
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Padding(padding:responsiveApp.edgeInsetsApp.vrtSmallEdgeInsets ,
+                  Padding(
+                      padding: responsiveApp.edgeInsetsApp.vrtSmallEdgeInsets,
                       child: InfoText(
                         type: emailStr,
                         text: emailDefaultStr,
@@ -64,13 +66,15 @@ class Footer extends StatelessWidget {
           Padding(
               padding: responsiveApp.edgeInsetsApp.vrtSmallEdgeInsets,
               child: Divider(
-                color: Theme.of(context).accentColor,
+                color: Colors.blueGrey, //Theme.of(context).accentColor,
                 height: responsiveApp.dividerHznHeight,
               )),
-          Text(
-            copyrightStr,
-            style: Theme.of(context).accentTextTheme.bodyText1,
-          ),
+          Text(copyrightStr,
+              style: TextStyle(
+                  color: Colors.blueGrey[100],
+                  fontSize: responsiveApp
+                      .bodyText1) //Theme.of(context).accentTextTheme.bodyText1,
+              ),
         ],
       ),
     );

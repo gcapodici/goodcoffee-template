@@ -42,7 +42,6 @@ class _HomePageState extends State<HomePage> {
     super.initState();
   }
 
-
   @override
   Widget build(BuildContext context) {
     responsiveApp = ResponsiveApp(context);
@@ -58,24 +57,20 @@ class _HomePageState extends State<HomePage> {
         floatingActionButton: Visibility(
           visible: _isVisible,
           child: FloatingActionButton(
-            onPressed: () => {
-              autoScrollController.scrollToIndex(0)},
-            child:  const Icon(Icons.arrow_upward),
+            onPressed: () => {autoScrollController.scrollToIndex(0)},
+            child: const Icon(Icons.arrow_upward),
           ),
         ),
-        appBar:
-       isMobileAndTablet(context)
+        appBar: isMobileAndTablet(context)
             ? ShopAppBar(_opacity)
             : Header(_opacity),
         drawer: const ShopDrawer(),
         body: ListView(controller: autoScrollController, children: [
           const Carousel(),
-         isMobileAndTablet(context)
+          isMobileAndTablet(context)
               ? MenuTap()
               : SectionListView(autoScrollController),
-          isMobileAndTablet(context) 
-              ? const SizedBox.shrink() 
-              : Footer()
+          isMobileAndTablet(context) ? const SizedBox.shrink() : Footer()
         ]));
   }
 }

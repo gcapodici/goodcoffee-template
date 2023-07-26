@@ -17,7 +17,7 @@ class BottomColumn extends StatelessWidget {
   late ResponsiveApp responsiveApp;
   @override
   Widget build(BuildContext context) {
-    responsiveApp=ResponsiveApp(context);
+    responsiveApp = ResponsiveApp(context);
     return Padding(
       padding: responsiveApp.edgeInsetsApp.onlyLargeBottomEdgeInsets,
       child: Column(
@@ -25,20 +25,24 @@ class BottomColumn extends StatelessWidget {
         children: [
           Text(
             heading,
-            style: Theme.of(context).accentTextTheme.headline6,
+            style: TextStyle(
+                color: Colors.blueGrey[300], fontSize: responsiveApp.headline6),
           ),
-          createS(s1,context),
-          createS(s2,context),
-          createS(s3,context)
+          createS(s1, context),
+          createS(s2, context),
+          createS(s3, context)
         ],
       ),
     );
   }
 
-  createS(String s,context){
-    return Padding(padding: responsiveApp.edgeInsetsApp.onlySmallTopEdgeInsets,child:Text(
-      s,
-      style: Theme.of(context).accentTextTheme.bodyText1,
-    ));
+  createS(String s, context) {
+    return Padding(
+        padding: responsiveApp.edgeInsetsApp.onlySmallTopEdgeInsets,
+        child: Text(
+          s,
+          style: TextStyle(
+              color: Colors.blueGrey[100], fontSize: responsiveApp.bodyText1),
+        ));
   }
 }

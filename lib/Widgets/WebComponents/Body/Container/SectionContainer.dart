@@ -15,7 +15,7 @@ class SectionContainer extends StatelessWidget {
   late ResponsiveApp responsiveApp;
   @override
   Widget build(BuildContext context) {
-    responsiveApp=ResponsiveApp(context);
+    responsiveApp = ResponsiveApp(context);
     return Container(
       width: responsiveApp.width,
       child: Row(
@@ -37,7 +37,9 @@ class SectionContainer extends StatelessWidget {
             children: [
               Text(
                 subTitle,
-                style: Theme.of(context).accentTextTheme.bodyText1,
+                style: TextStyle(
+                    color: Colors.blueGrey[100],
+                    fontSize: responsiveApp.bodyText1),
               ),
               Text(
                 title,
