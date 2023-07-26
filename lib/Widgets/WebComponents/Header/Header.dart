@@ -12,6 +12,7 @@ class Header extends StatefulWidget implements PreferredSizeWidget {
   @override
   _HeaderState createState() => _HeaderState();
 
+  // *Este PreferredSizeWidget sirve para darle un tamaño (size) a este widget (Header)
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }
 
@@ -43,7 +44,7 @@ class _HeaderState extends State<Header> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  SizedBox(width:responsiveApp.barSpace1Width),
+                  SizedBox(width: responsiveApp.barSpace1Width),
                   HeaderButton(0, aboutUsStr),
                   SizedBox(width: responsiveApp.barSpace1Width),
                   HeaderButton(1, locationStr),

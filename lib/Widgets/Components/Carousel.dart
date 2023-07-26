@@ -1,12 +1,13 @@
-import 'package:carousel_slider/carousel_controller.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 import '../../Model/Carousel.dart';
 import '../../Util/SizingInfo.dart';
 import '../../Values/ResponsiveApp.dart';
 
 class Carousel extends StatefulWidget {
+  const Carousel({super.key});
+
   @override
   _CarouselState createState() => _CarouselState();
 }
@@ -19,18 +20,15 @@ class _CarouselState extends State<Carousel> {
   late ResponsiveApp responsiveApp;
 
   List<Widget> generateImageTiles() {
-    return carousel
-        .map(
+    return carousel.map(
           (element) => ClipRRect(
-        borderRadius:
-        BorderRadius.circular(responsiveApp.carouselRadiusWidth),
+        borderRadius: BorderRadius.circular(responsiveApp.carouselRadiusWidth),
         child: Image.asset(
           element.image,
           fit: BoxFit.cover,
         ),
       ),
-    )
-        .toList();
+    ).toList();
   }
 
   @override
@@ -43,22 +41,22 @@ class _CarouselState extends State<Carousel> {
           items: imageSliders,
           options: CarouselOptions(
               scrollPhysics: isMobileAndTablet(context)
-                  ? PageScrollPhysics()
-                  : NeverScrollableScrollPhysics(),
+                  ? const PageScrollPhysics()
+                  : const NeverScrollableScrollPhysics(),
               enlargeCenterPage: true,
               autoPlay: true,
               aspectRatio:  18/8,
               onPageChanged: (index, reason) {
                 setState(() {
                   _current = index;
-                  for (int i = 0; i < carousel.length; i++)
-                    carousel[i].isSelected=(i == index)?true:false;
-
+                  for (int i = 0; i < carousel.length; i++) {
+                    carousel[i].isSelected = (i == index) ? true : false;
+                  }
                 });
               }),
           carouselController: _controller,
         ),
-        Positioned.fill(
+        Positioned.fill( // *Texto del carousel
             child: Center(
               child: Text(
                 carousel[_current].title,
@@ -71,7 +69,7 @@ class _CarouselState extends State<Carousel> {
             )),
         isMobileAndTablet(context)
             ? Container()
-            : Positioned.fill(
+            : Positioned.fill( // *Estos son los circulitos de abajo que no see muestran en mobile
             child: Align(
               alignment: Alignment.bottomCenter,
               child: Container(

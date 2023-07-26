@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:goodcoffee/Widgets/WebComponents/Body/SectionList.dart';
 import 'package:goodcoffee/Widgets/WebComponents/Header/Header.dart';
@@ -70,11 +69,13 @@ class _HomePageState extends State<HomePage> {
             : Header(_opacity),
         drawer: const ShopDrawer(),
         body: ListView(controller: autoScrollController, children: [
-          Carousel(),
+          const Carousel(),
          isMobileAndTablet(context)
               ? MenuTap()
               : SectionListView(autoScrollController),
-          isMobileAndTablet(context) ? const SizedBox.shrink() : Footer()
+          isMobileAndTablet(context) 
+              ? const SizedBox.shrink() 
+              : Footer()
         ]));
   }
 }

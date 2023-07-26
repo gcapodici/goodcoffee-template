@@ -40,30 +40,29 @@ class EdgeInsetsApp {
   late EdgeInsets onlyExLargeTopEdgeInsets;
 
 
-  ResponsiveApp _responsiveApp;
+  final ResponsiveApp _responsiveApp;
 
-
-  EdgeInsetsApp(this._responsiveApp){
+  /*
+    Esta clase tiene todos los EdgeInsets, es decir, todas las medidas de los paddings
+  */
+  EdgeInsetsApp(this._responsiveApp) {
 
     //Padding
-    double _smallHeightEdgeInsets =_responsiveApp.setHeight(5);
-    double _smallWidthEdgeInsets =_responsiveApp.setWidth(5);
+    double _smallHeightEdgeInsets = _responsiveApp.setHeight(5);
+    double _smallWidthEdgeInsets = _responsiveApp.setWidth(5);
 
-    double  _mediumHeightEdgeInsets =_responsiveApp.setHeight(10);
-    double  _mediumWidthEdgeInsets =_responsiveApp.setWidth(10);
+    double  _mediumHeightEdgeInsets = _responsiveApp.setHeight(10);
+    double  _mediumWidthEdgeInsets = _responsiveApp.setWidth(10);
 
-    double  _largeHeightEdgeInsets =_responsiveApp.setHeight(20);
-    double  _largeWidthEdgeInsets =_responsiveApp.setWidth(20);
+    double  _largeHeightEdgeInsets = _responsiveApp.setHeight(20);
+    double  _largeWidthEdgeInsets = _responsiveApp.setWidth(20);
 
-    double  _largeExHeightEdgeInsets =_responsiveApp.setHeight(100);
-    double  _largeExWidthEdgeInsets =_responsiveApp.setWidth(100);
+    double  _largeExHeightEdgeInsets = _responsiveApp.setHeight(100);
+    double  _largeExWidthEdgeInsets = _responsiveApp.setWidth(100);
     //Todo
-    allSmallEdgeInsets =
-        EdgeInsets.symmetric(vertical: _smallHeightEdgeInsets,
-            horizontal: _smallWidthEdgeInsets);
-    allMediumEdgeInsets =
-        EdgeInsets.symmetric(vertical:_mediumHeightEdgeInsets,
-            horizontal: _mediumWidthEdgeInsets);
+    
+    allSmallEdgeInsets = EdgeInsets.symmetric(vertical:  _smallHeightEdgeInsets, horizontal: _smallWidthEdgeInsets);
+    allMediumEdgeInsets = EdgeInsets.symmetric(vertical: _mediumHeightEdgeInsets, horizontal: _mediumWidthEdgeInsets);
     allLargeEdgeInsets =
         EdgeInsets.symmetric(vertical: _largeHeightEdgeInsets,
             horizontal: _largeWidthEdgeInsets);

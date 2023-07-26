@@ -9,20 +9,21 @@ import 'ProductSection.dart';
 class SectionListView extends StatelessWidget {
   AutoScrollController autoScrollController;
 
-   SectionListView(this.autoScrollController);
+  SectionListView(this.autoScrollController, {super.key});
   late ResponsiveApp responsiveApp;
+
   @override
   Widget build(BuildContext context) {
-    responsiveApp=ResponsiveApp(context);
+    responsiveApp = ResponsiveApp(context);
     return Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: List.generate(
-          sections.length+1, (index) {
+          sections.length + 1, (index) {
           return (index == 0)
               ? Padding(
               padding: responsiveApp.edgeInsetsApp.allExLargeEdgeInsets,
               child: addScroll(MenuSection(autoScrollController), 0))
-              :Padding(
+              : Padding(
               padding: responsiveApp.edgeInsetsApp.allExLargeEdgeInsets,
               child: addScroll(ProductSection(sections[index - 1]), index));
         } ,
