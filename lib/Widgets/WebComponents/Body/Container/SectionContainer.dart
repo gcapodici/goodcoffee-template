@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../Values/ResponsiveApp.dart';
 
 class SectionContainer extends StatelessWidget {
-  SectionContainer({
+  const SectionContainer({
     Key? key,
     required this.title,
     required this.subTitle,
@@ -12,11 +12,11 @@ class SectionContainer extends StatelessWidget {
 
   final String title, subTitle;
   final Color? color;
-  late ResponsiveApp responsiveApp;
+
   @override
   Widget build(BuildContext context) {
-    responsiveApp = ResponsiveApp(context);
-    return Container(
+    ResponsiveApp responsiveApp = ResponsiveApp(context);
+    return SizedBox(
       width: responsiveApp.width,
       child: Row(
         children: [

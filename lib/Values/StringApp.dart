@@ -1,6 +1,6 @@
 //String Menu
-String get shopStr=> "GOOD COFFEE";
-String get coffeesStr=> "Cafes";
+String get shopStr => "GOOD COFFEE";
+String get coffeesStr => "Cafes";
 String get drinksStr => "Bebidas";
 String get cakesStr => "Pasteles";
 String get sandwichesStr => "Sandwiches";

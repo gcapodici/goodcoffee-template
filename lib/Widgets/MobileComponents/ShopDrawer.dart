@@ -13,11 +13,10 @@ class ShopDrawer extends StatefulWidget {
 }
 
 class _ShopDrawerState extends State<ShopDrawer> {
-  late ResponsiveApp responsiveApp;
   @override
   Widget build(BuildContext context) {
-    responsiveApp = ResponsiveApp(context);
-    return Container(
+    ResponsiveApp responsiveApp = ResponsiveApp(context);
+    return SizedBox(
       width: responsiveApp.drawerWidth,
       child: Drawer(
         child: Container(
@@ -25,18 +24,19 @@ class _ShopDrawerState extends State<ShopDrawer> {
             child: Column(
               children: [
                 UserAccountsDrawerHeader(
-                  accountName: Text(nameStr,
-                      style: Theme.of(context).textTheme.headline6),
+                  accountName: Text(nameStr),
                   accountEmail: Text(emailDefaultStr),
-                  decoration:
-                      BoxDecoration(color: Theme.of(context).backgroundColor),
+                  decoration: BoxDecoration(
+                      color: Theme.of(context).colorScheme.background),
                   currentAccountPicture: const CircleAvatar(
                       backgroundImage: AssetImage('assets/images/cody.jpg')),
                 ),
-                getItem(
+                ListTile(
+                  title: Text(aboutUsStr),
+                  leading:
+                      const Icon(Icons.article_outlined, color: Colors.white),
+                  textColor: Colors.white,
                   onTap: () {},
-                  title: aboutUsStr,
-                  icon: Icons.article_outlined,
                 ),
                 getItem(
                   onTap: () {},

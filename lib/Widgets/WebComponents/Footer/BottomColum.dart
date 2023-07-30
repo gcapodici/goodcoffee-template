@@ -14,7 +14,9 @@ class BottomColumn extends StatelessWidget {
     required this.s2,
     required this.s3,
   });
+
   late ResponsiveApp responsiveApp;
+
   @override
   Widget build(BuildContext context) {
     responsiveApp = ResponsiveApp(context);

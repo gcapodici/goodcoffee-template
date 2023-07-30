@@ -10,12 +10,11 @@ import 'Container/SectionContainer.dart';
 class MenuSection extends StatelessWidget {
   final AutoScrollController _scrollController;
 
-  MenuSection(this._scrollController, {super.key});
-  late ResponsiveApp responsiveApp;
+  const MenuSection(this._scrollController, {super.key});
 
   @override
   Widget build(BuildContext context) {
-    responsiveApp = ResponsiveApp(context);
+    ResponsiveApp responsiveApp = ResponsiveApp(context);
 
     return Column(
       children: [
@@ -23,17 +22,20 @@ class MenuSection extends StatelessWidget {
           title: sectionMenuTitleStr,
           subTitle: sectionMenuSubTitleStr,
         ),
-        Padding(padding: responsiveApp.edgeInsetsApp.onlyExLargeTopEdgeInsets, 
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: List.generate(
-              menu.length, (index) => MenuContainer(index: index, onPress:() => scrollIndex(index + 1))),
-        ))
+        Padding(
+            padding: responsiveApp.edgeInsetsApp.onlyExLargeTopEdgeInsets,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: List.generate(
+                  menu.length,
+                  (index) => MenuContainer(
+                      index: index, onPress: () => scrollIndex(index + 1))),
+            ))
       ],
     );
   }
 
-  scrollIndex(index){
+  scrollIndex(index) {
     _scrollController.scrollToIndex(index);
   }
 }

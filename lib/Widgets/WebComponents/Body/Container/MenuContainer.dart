@@ -15,10 +15,9 @@ class MenuContainer extends StatefulWidget {
 }
 
 class _MenuContainerState extends State<MenuContainer> {
-  late ResponsiveApp responsiveApp;
   @override
   Widget build(BuildContext context) {
-    responsiveApp = ResponsiveApp(context);
+    ResponsiveApp responsiveApp = ResponsiveApp(context);
     return Padding(
         padding: responsiveApp.edgeInsetsApp.hrzSmallEdgeInsets,
         child: InkWell(

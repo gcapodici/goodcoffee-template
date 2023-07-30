@@ -6,7 +6,8 @@ import 'Container/SectionContainer.dart';
 
 class ProductSection extends StatelessWidget {
   Section section;
-  ProductSection(this.section);
+  ProductSection(this.section, {super.key});
+
   @override
   Widget build(BuildContext context) {
     return Column(

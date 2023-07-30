@@ -78,7 +78,7 @@ class _CarouselState extends State<Carousel> {
                 // *Estos son los circulitos de abajo que no see muestran en mobile
                 child: Align(
                 alignment: Alignment.bottomCenter,
-                child: Container(
+                child: SizedBox(
                     width: responsiveApp.carouselContainerWidth,
                     height: responsiveApp.carouselContainerHeight,
                     child: Row(

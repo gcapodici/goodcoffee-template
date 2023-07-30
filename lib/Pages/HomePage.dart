@@ -9,7 +9,7 @@ import '../Values/ResponsiveApp.dart';
 import '../Widgets/Components/Carousel.dart';
 import '../Widgets/MobileComponents/MenuTap.dart';
 import '../Widgets/MobileComponents/ShopDrawer.dart';
-import '../Widgets/MobileComponents/ShpAppBar.dart';
+import '../Widgets/MobileComponents/ShopAppBar.dart';
 import '../Widgets/WebComponents/Footer/Footer.dart';
 
 class HomePage extends StatefulWidget {
@@ -70,7 +70,7 @@ class _HomePageState extends State<HomePage> {
           isMobileAndTablet(context)
               ? MenuTap()
               : SectionListView(autoScrollController),
-          isMobileAndTablet(context) ? const SizedBox.shrink() : Footer()
+          isMobileAndTablet(context) ? const SizedBox.shrink() : const Footer()
         ]));
   }
 }

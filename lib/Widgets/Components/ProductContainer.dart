@@ -14,7 +14,7 @@ class ProductContainer extends StatelessWidget {
     ResponsiveApp responsiveApp = ResponsiveApp(context);
     return InkWell(
       onTap: onPress,
-      child: Container(
+      child: SizedBox(
         height: responsiveApp.productContainerWidth,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
