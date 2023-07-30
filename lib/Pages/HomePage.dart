@@ -53,7 +53,7 @@ class _HomePageState extends State<HomePage> {
     _isVisible = _scrollPosition >= responsiveApp.menuHeight;
     return Scaffold(
         key: homeScaffoldKey,
-        backgroundColor: Theme.of(context).backgroundColor,
+        backgroundColor: Theme.of(context).colorScheme.background,
         floatingActionButton: Visibility(
           visible: _isVisible,
           child: FloatingActionButton(

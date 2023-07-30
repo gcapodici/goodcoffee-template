@@ -4,7 +4,8 @@ import '../../../../Model/Manu.dart';
 import '../../../../Values/ResponsiveApp.dart';
 
 class MenuContainer extends StatefulWidget {
-  const MenuContainer({Key? key, required this.index, this.onPress}) : super(key: key);
+  const MenuContainer({Key? key, required this.index, this.onPress})
+      : super(key: key);
 
   final int index;
   final onPress;
@@ -17,7 +18,7 @@ class _MenuContainerState extends State<MenuContainer> {
   late ResponsiveApp responsiveApp;
   @override
   Widget build(BuildContext context) {
-    responsiveApp=ResponsiveApp(context);
+    responsiveApp = ResponsiveApp(context);
     return Padding(
         padding: responsiveApp.edgeInsetsApp.hrzSmallEdgeInsets,
         child: InkWell(
@@ -27,8 +28,8 @@ class _MenuContainerState extends State<MenuContainer> {
               height: responsiveApp.menuContainerHeight,
               decoration: BoxDecoration(
                   color: Theme.of(context).cardColor,
-                  borderRadius: BorderRadius.all(Radius.circular(responsiveApp.menuRadiusWidth))
-              ),
+                  borderRadius: BorderRadius.all(
+                      Radius.circular(responsiveApp.menuRadiusWidth))),
               child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -40,7 +41,7 @@ class _MenuContainerState extends State<MenuContainer> {
                     ),
                     Text(
                       menu[widget.index].title,
-                      style: Theme.of(context).textTheme.bodyText1,
+                      style: Theme.of(context).textTheme.bodyLarge,
                     )
                   ])),
         ));

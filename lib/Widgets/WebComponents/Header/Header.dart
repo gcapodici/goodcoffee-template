@@ -17,20 +17,19 @@ class Header extends StatefulWidget implements PreferredSizeWidget {
 }
 
 class _HeaderState extends State<Header> {
-
-  late ResponsiveApp responsiveApp;
   @override
   Widget build(BuildContext context) {
-    responsiveApp = ResponsiveApp(context);
+    ResponsiveApp responsiveApp = ResponsiveApp(context);
 
     return Container(
       color: Theme.of(context).primaryColor.withOpacity(widget.opacity),
       child: Padding(
-        padding:responsiveApp.edgeInsetsApp.allMediumEdgeInsets,
+        padding: responsiveApp.edgeInsetsApp.allMediumEdgeInsets,
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text( // *Este Text es el titulo GOOD COFFEE
+            Text(
+              // *Este Text es el titulo GOOD COFFEE
               shopStr,
               style: TextStyle(
                 color: Colors.blueGrey[100],
@@ -53,12 +52,12 @@ class _HeaderState extends State<Header> {
             ),
             // *Sección de iniciar sesión
             HeaderButton(2, loginStr, lineIsVisible: false),
-            IconButton(padding: EdgeInsets.zero,
+            IconButton(
+              padding: EdgeInsets.zero,
               icon: const Icon(Icons.local_grocery_store_outlined),
               splashColor: Colors.transparent,
               highlightColor: Colors.transparent,
-              onPressed: () {
-              },
+              onPressed: () {},
             )
           ],
         ),

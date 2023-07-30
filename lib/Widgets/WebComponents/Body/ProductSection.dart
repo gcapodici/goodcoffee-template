@@ -12,11 +12,11 @@ class ProductSection extends StatelessWidget {
     return Column(
       children: [
         SectionContainer(
-          title:section.title ,
+          title: section.title,
           subTitle: section.subtitle,
           color: section.color,
         ),
-       ProductListView(section.list)
+        ProductListView(section.list)
       ],
     );
   }

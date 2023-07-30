@@ -7,13 +7,11 @@ class ProductContainer extends StatelessWidget {
   Product product;
   var onPress;
 
-  ProductContainer(this.product, {this.onPress});
-
-  late ResponsiveApp responsiveApp;
+  ProductContainer(this.product, {super.key, this.onPress});
 
   @override
   Widget build(BuildContext context) {
-    responsiveApp = ResponsiveApp(context);
+    ResponsiveApp responsiveApp = ResponsiveApp(context);
     return InkWell(
       onTap: onPress,
       child: Container(
@@ -21,8 +19,11 @@ class ProductContainer extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(product.title.toUpperCase(),),
-            Text(product.price),
+            Text(
+              product.title.toUpperCase(),
+              style: const TextStyle(color: Colors.white),
+            ),
+            Text(product.price, style: const TextStyle(color: Colors.white)),
           ],
         ),
       ),

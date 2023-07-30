@@ -45,8 +45,8 @@ class SectionContainer extends StatelessWidget {
                 title,
                 style: Theme.of(context)
                     .textTheme
-                    .headline2!
-                    .copyWith(fontWeight: FontWeight.bold),
+                    .displayMedium!
+                    .copyWith(color: Colors.white, fontWeight: FontWeight.bold),
               )
             ],
           )

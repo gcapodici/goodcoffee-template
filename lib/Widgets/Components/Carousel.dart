@@ -20,15 +20,18 @@ class _CarouselState extends State<Carousel> {
   late ResponsiveApp responsiveApp;
 
   List<Widget> generateImageTiles() {
-    return carousel.map(
+    return carousel
+        .map(
           (element) => ClipRRect(
-        borderRadius: BorderRadius.circular(responsiveApp.carouselRadiusWidth),
-        child: Image.asset(
-          element.image,
-          fit: BoxFit.cover,
-        ),
-      ),
-    ).toList();
+            borderRadius:
+                BorderRadius.circular(responsiveApp.carouselRadiusWidth),
+            child: Image.asset(
+              element.image,
+              fit: BoxFit.cover,
+            ),
+          ),
+        )
+        .toList();
   }
 
   @override
@@ -45,7 +48,7 @@ class _CarouselState extends State<Carousel> {
                   : const NeverScrollableScrollPhysics(),
               enlargeCenterPage: true,
               autoPlay: true,
-              aspectRatio:  18/8,
+              aspectRatio: 18 / 8,
               onPageChanged: (index, reason) {
                 setState(() {
                   _current = index;
@@ -56,51 +59,54 @@ class _CarouselState extends State<Carousel> {
               }),
           carouselController: _controller,
         ),
-        Positioned.fill( // *Texto del carousel
+        Positioned.fill(
+            // *Texto del carousel
             child: Center(
-              child: Text(
-                carousel[_current].title,
-                style: TextStyle(
-                  letterSpacing: responsiveApp.letterSpacingCarouselWidth,
-                  fontFamily: 'Electrolize',
-                  fontSize: responsiveApp.headline3,
-                ),
-              ),
-            )),
+          child: Text(
+            carousel[_current].title,
+            style: TextStyle(
+              color: Colors.white,
+              letterSpacing: responsiveApp.letterSpacingCarouselWidth,
+              fontFamily: 'Electrolize',
+              fontSize: responsiveApp.headline3,
+            ),
+          ),
+        )),
         isMobileAndTablet(context)
             ? Container()
-            : Positioned.fill( // *Estos son los circulitos de abajo que no see muestran en mobile
-            child: Align(
-              alignment: Alignment.bottomCenter,
-              child: Container(
-                  width: responsiveApp.carouselContainerWidth,
-                  height: responsiveApp.carouselContainerHeight,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: List.generate(
-                        carousel.length,
-                            (index) => InkWell(
-                          splashColor: Colors.transparent,
-                          hoverColor: Colors.transparent,
-                          onTap: () {
-                            _controller.animateToPage(index);
-                          },
-                          child: Container(
-                            width: responsiveApp
-                                .carouselCircleContainerWidth,
-                            height: responsiveApp
-                                .carouselCircleContainerHeight,
-                            margin: responsiveApp
-                                .edgeInsetsApp.allSmallEdgeInsets,
-                            decoration: BoxDecoration(
-                                color: carousel[index].isSelected
-                                    ? Colors.white
-                                    : Colors.blueGrey,
-                                shape: BoxShape.circle),
-                          ),
-                        )),
-                  )),
-            ))
+            : Positioned.fill(
+                // *Estos son los circulitos de abajo que no see muestran en mobile
+                child: Align(
+                alignment: Alignment.bottomCenter,
+                child: Container(
+                    width: responsiveApp.carouselContainerWidth,
+                    height: responsiveApp.carouselContainerHeight,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: List.generate(
+                          carousel.length,
+                          (index) => InkWell(
+                                splashColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                onTap: () {
+                                  _controller.animateToPage(index);
+                                },
+                                child: Container(
+                                  width: responsiveApp
+                                      .carouselCircleContainerWidth,
+                                  height: responsiveApp
+                                      .carouselCircleContainerHeight,
+                                  margin: responsiveApp
+                                      .edgeInsetsApp.allSmallEdgeInsets,
+                                  decoration: BoxDecoration(
+                                      color: carousel[index].isSelected
+                                          ? Colors.white
+                                          : Colors.blueGrey,
+                                      shape: BoxShape.circle),
+                                ),
+                              )),
+                    )),
+              ))
       ],
     );
   }

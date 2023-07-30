@@ -6,9 +6,7 @@ import 'BottomColum.dart';
 import 'InfoText.dart';
 
 class Footer extends StatelessWidget {
-  //late ResponsiveApp responsiveApp;
-
-  Footer({super.key});
+  const Footer({super.key});
 
   @override
   Widget build(BuildContext context) {
