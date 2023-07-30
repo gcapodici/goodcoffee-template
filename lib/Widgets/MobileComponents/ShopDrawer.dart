@@ -31,12 +31,10 @@ class _ShopDrawerState extends State<ShopDrawer> {
                   currentAccountPicture: const CircleAvatar(
                       backgroundImage: AssetImage('assets/images/cody.jpg')),
                 ),
-                ListTile(
-                  title: Text(aboutUsStr),
-                  leading:
-                      const Icon(Icons.article_outlined, color: Colors.white),
-                  textColor: Colors.white,
+                getItem(
                   onTap: () {},
+                  title: aboutUsStr,
+                  icon: Icons.article_outlined,
                 ),
                 getItem(
                   onTap: () {},
@@ -70,7 +68,7 @@ class _ShopDrawerState extends State<ShopDrawer> {
   getItem({required String title, required IconData icon, onTap}) {
     return ListTile(
       onTap: onTap,
-      title: Text(title, style: Theme.of(context).textTheme.bodyText2),
+      title: Text(title, style: const TextStyle(color: Colors.white)),
       leading: Icon(
         icon,
         color: Theme.of(context).iconTheme.color,
